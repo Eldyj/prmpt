@@ -1,13 +1,9 @@
-#ifndef _ELDYJ_SPWD_H_
-#  define _ELDYJ_SPWD_H_
+#ifndef _SPWD_H_
+#  define _SPWD_H_
 
 #  ifndef _PWDS_H_
 #    include"pwds.h"
 #  endif /* !_PWDS_H_ */
-
-#  ifndef _STRING_H
-#    include <string.h>
-#  endif /* _STRING_H */
 
 #  ifndef _STRING_H_
 #    include "string.h"
@@ -70,4 +66,4 @@ char* spwde(void) {
 }
 */
 
-#endif /* _ELDYJ_SPWD_H_ */
+#endif /* _SPWD_H_ */

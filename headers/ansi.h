@@ -1,9 +1,9 @@
 #ifndef _ANSI_H_
 #  define _ANSI_H_
 
-#  ifndef _STRING_H
-#    include<strinh.h>
-#  endif /* !_STRING_H */
+#  ifndef _STRING_H_
+#    include"string.h"
+#  endif /* !_STRING_H_ */
 
 char* ansi_col(char* name, char mode) {
   char* res = "\033[00m";
