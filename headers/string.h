@@ -2,9 +2,9 @@
 #  define _STRING_H_
 
 size_t str_count_char(const char *str, const char ch) {
-    size_t count = 0;
-    while (*str) if (*str++ == ch) ++count;
-    return count;
+  size_t count = 0;
+  while (*str) if (*str++ == ch) ++count;
+  return count;
 }
 
 unsigned short starts_with(const char *str, const char *prefix) {

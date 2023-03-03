@@ -1,5 +1,5 @@
 #ifndef _PWDS_H_
-#define _PWDS_H_
+#  define _PWDS_H_
 
 #  ifndef _NEXTOPT_H_
 #    include"nextopt.h"

@@ -1,5 +1,5 @@
 #ifndef _MODULE_H_
-#define _MODULE_H_
+#  define _MODULE_H_
 
 #  ifndef _SPWD_H_
 #    include "spwd.h"
@@ -33,4 +33,5 @@ void module(char* src, char** lc, char* sep) {
   printf(" %s%s \033[0m",ansi_col(fg,'f'),tx);
   *lc = bg;
 }
+
 #endif /* !_MODULE_H_ */

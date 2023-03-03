@@ -1,5 +1,5 @@
 #ifndef _NEXTOPT_H_
-#define _NEXTOPT_H_
+#  define _NEXTOPT_H_
 
 short next_opt(char** str, char** buf, char sep) {
   char* str_c = *str;
