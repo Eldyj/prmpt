@@ -1,9 +1,9 @@
 #ifndef _MODULE_H_
 #  define _MODULE_H_
 
-#  ifndef _SPWD_H_
-#    include "spwd.h"
-#  endif /* !_SPWD_H_ */
+#  ifndef _TEMPLATES_H_
+#    include "templates.h"
+#  endif /* !_TEMPLATES_H_ */
 
 #  ifndef _ANSI_H_
 #    include "ansi.h"
@@ -21,10 +21,11 @@ void module(char* src, char** lc, char* sep) {
 
   if (!*tx) return;
   
-  if (!strcmp(tx,"@cwd")) tx = cwd();
-  else if (!strcmp(tx,"@pwd")) tx = pwd();
+  if      (!strcmp(tx,"@cwd"))  tx = cwd();
+  else if (!strcmp(tx,"@pwd"))  tx = pwd();
   else if (!strcmp(tx,"@spwd")) tx = spwd();
-  //else if (!strcmp(tx,"@spwde")) tx = spwde();
+  else if (!strcmp(tx,"@user")) tx = user();
+  else if (!strcmp(tx,"@host")) tx = host();
 
   printf("%s", ansi_col(bg,'b'));
 

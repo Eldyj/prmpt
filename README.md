@@ -7,6 +7,8 @@ simple shell prompt engine in C
 - @pwd
 - @cwd
 - @spwd
+- @user
+- @host
 
 ## usage
 
@@ -16,5 +18,5 @@ prmpt "separator" "fgcolor;bgcolor;text or @prepared-template" "same as thing af
 
 ```bash
 # my prompt:
-prmpt "" "blue;black;$USER" "black;green;@spwd"
+prmpt "" "blue;black;@user" "black;green;@spwd"
 ```

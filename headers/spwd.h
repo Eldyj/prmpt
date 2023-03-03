@@ -6,45 +6,40 @@
 #  endif /* !_PWDS_H_ */
 
 #  ifndef _STRING_H_
-#    include "string.h"
+#    include"string.h"
 #  endif /* !_STRING_H_ */
 
 char* spwd(void) {
   char* pwd = getenv("PWD");
   char* home = getenv("HOME");
-  if (!pwd)
-    return "ERR: PWD environment variable not set";
+  if (!pwd) return "ERR: PWD environment variable not set";
 
   if (!strcmp(pwd,home)) return "~";
 
   if (starts_with(pwd,home)) {
-    pwd += strlen(getenv("HOME")) - 2;
-    pwd[0] = '/';
-    pwd[1] = '~';
-    pwd[2] = '/';
+    pwd += strlen(getenv("HOME")) - 1;
+    pwd[0] = '~';
+    pwd[1] = '/';
   }
 
   char buf[str_count_char(pwd, '/')*3];
+  char* buf_ptr = buf;
   char* buf_p = buf;
-  
-  while (*pwd) {
-    if (*pwd == '/') {
-      if (pwd[1] == '~') {
-        ++pwd;
-        *buf_p++ = '~';
-        continue;
-      }
-      *buf_p++ = *pwd++;
-      if (*pwd == '.') *buf_p++ = *pwd++;
-      *buf_p++ = *pwd++;
-      ++pwd;
-    }
+  char* tmp;
 
-    if (*pwd) ++pwd;
+  while(!next_opt(&pwd,&tmp,'/')) {
+    if (!*tmp) continue;
+    if (*tmp != '~') *buf_p++ = '/';
+    *buf_p++ = *tmp;
+    if (*tmp == '.') *buf_p++ = tmp[1];
   }
 
-  *buf_p = '\0';
-  return (char*) buf;
+  *buf_p++ = '/';
+  *buf_p++ = *tmp;
+  if (*tmp == '.') *buf_p++ = tmp[1];
+
+  *buf_p++ = 0;
+  return buf_ptr;
 }
 
 /*

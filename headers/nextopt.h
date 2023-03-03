@@ -14,6 +14,8 @@ short next_opt(char** str, char** buf, char sep) {
   *str_c = 0;
   *buf = *str;
   *str = str_c+1;
+  //printf(*str);
+  //printf(*buf);
   return 0;
 }
 #endif /* !_NEXTOPT_H_ */
