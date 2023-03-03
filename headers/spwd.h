@@ -1,25 +1,17 @@
 #ifndef _ELDYJ_SPWD_H_
-#define _ELDYJ_SPWD_H_
+#  define _ELDYJ_SPWD_H_
 
 #  ifndef _PWDS_H_
-#  include"pwds.h"
+#    include"pwds.h"
 #  endif /* !_PWDS_H_ */
 
 #  ifndef _STRING_H
-#  include <string.h>
+#    include <string.h>
 #  endif /* _STRING_H */
 
-size_t str_count_char(const char *str, const char ch) {
-    size_t count = 0;
-    while (*str) if (*str++ == ch) ++count;
-    return count;
-}
-
-unsigned short starts_with(const char *str, const char *prefix) {
-  size_t len = strlen(prefix);
-  for (size_t i = 0; i < len; ++i) if (str[i] != prefix[i]) return 0;
-  return 1;
-}
+#  ifndef _STRING_H_
+#    include "string.h"
+#  endif /* !_STRING_H_ */
 
 char* spwd(void) {
   char* pwd = getenv("PWD");

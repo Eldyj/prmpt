@@ -1,5 +1,14 @@
 #ifndef _MODULE_H_
 #define _MODULE_H_
+
+#  ifndef _SPWD_H_
+#    include "spwd.h"
+#  endif /* !_SPWD_H_ */
+
+#  ifndef _ANSI_H_
+#    include "ansi.h"
+#  endif /* !_ANSI_H_ */
+
 void module(char* src, char** lc, char* sep) {
   char* str = src;
   char* fg  = "";
