@@ -1,6 +1,4 @@
 #include<stdio.h>
-#include"headers/spwd.h"
-#include"headers/ansi.h"
 #include"headers/module.h"
 
 int main(int argc, char** argv) {
