@@ -2,6 +2,10 @@
 
 simple shell prompt engine in C
 
+## preview
+
+<img src="./screenshot.png" alt="screenshot"/>
+
 ## templates
 
 - @pwd
