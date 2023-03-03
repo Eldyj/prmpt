@@ -12,3 +12,7 @@ int main(int argc, char** argv) {
   printf("%s%s\033[0m ",ansi_col(lc,'f'),sep);
   return 0;
 }
+
+/*
+ * TODO: buffering all modules into single string and only then printing it
+ */

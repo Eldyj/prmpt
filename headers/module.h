@@ -35,3 +35,7 @@ void module(char* src, char** lc, char* sep) {
 }
 
 #endif /* !_MODULE_H_ */
+
+/*
+ * TODO: turn module into function which will return string instead of printing it
+ */
